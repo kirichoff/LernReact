@@ -8,7 +8,7 @@ class ImagBox extends Component {
     render(){
 return(
     <div>
-    <div className="col-md-3 col-sm-6 graphics ads">
+    <div className="col-md-6 col-sm-6 graphics ads">
         <a href="single-project.html" className="portfolio_item">
         <img src={this.props.imgway} alt="image" className="img-responsive"/>
          <div className="portfolio_item_hover">
@@ -36,6 +36,7 @@ class ImagBoxRender extends  Component {
             ]};
     }
         eachImages(item,i){
+        console.log(this.props.ls)
            return(
                <ImagBox
                    key = {i}
@@ -51,7 +52,12 @@ class ImagBoxRender extends  Component {
         return(
             <div>
               <div>
-                  {this.props.ls.todos.map(this.eachImages)}
+                  {this.props.ls.todos.map(ls => {return <ImagBox
+                          imgway={ls.img_src}
+                          main_text={ls.main_text}
+                          button_text={ls.button_text}
+                      />;
+                  })}
               </div>
             </div>
         );

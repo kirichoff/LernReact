@@ -15,6 +15,7 @@ class InputType extends Component{
         var el = document.getElementById(this.props.idel);
         el.innerHTML = this.state.value;
         el.style.color = this.props.colort;
+        el.style.fontSize = this.props.txtSize
     }
 
     render(){

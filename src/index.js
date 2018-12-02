@@ -6,16 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import  ImagBoxRender from './components/ImagBoxRender';
 //mport App from './App';
 import PropTypes from 'prop-types';
-import rootReducer from './reducers'
-import { createStore } from 'redux'
+
+import store from './Store'
 import {Provider} from 'react-redux'
 
 
 
 //const store = createStore(counter)
-
-const store = createStore(rootReducer)
-
  ReactDOM.render(
     <Provider store = {store}>
         <AdminMenu store = {store} />

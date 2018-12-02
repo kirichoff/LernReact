@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
 import InputType from './InputType'
+import RedactText from './RedactText'
 class RedactHeader extends Component {
     render() {
         return (
             <div>
+                {/* TX1-5*/}
                 <div>Rename Intro</div>
-                <InputType idel={'qwr3'} ></InputType>
-                <InputType idel={'qwr3'} ></InputType>
-                <InputType idel={'qwr3'} ></InputType>
-                <InputType idel={'qwr3'} ></InputType>
+                <RedactText idel={'TX1'} />
+                <RedactText idel={'TX2'} />
+                <RedactText idel={'TX3'} />
+                <RedactText idel={'TX5'} />
                 <div>Rename second</div>
                 <InputType idel={'qwr3'} ></InputType>
                 <div>chacng Title</div>
-                <InputType idel={'qwr3'} ></InputType>
+                <InputType idel={'title'} />
                 <div>change Icon</div>
                 {/*...*/}
                 <div></div>
                 <div>change Fotter</div>
-                <InputType idel={'qwr3'} ></InputType>
+                <RedactText idel={'footer'} />
                 <div>change baground</div>
-                
+                <div>Menu text</div>
+                <RedactText idel={'inta'} />
             </div>
         );
     }

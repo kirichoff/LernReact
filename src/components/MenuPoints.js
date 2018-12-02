@@ -14,13 +14,13 @@ class MenuPoints extends Component{
     }
     Clik(){
         this.props.updateData(this.state.isrend);
-        this.state.isrend = (<div><Redact id="q3" tag={this.props.tag} close = {this.close}/></div>);
+        this.state.isrend = (<div><Redact id="q3" tag={this.props.children} close = {this.close}/></div>);
         this.props.updateData(this.state.isrend);
     }
     render(){
         return(
             <div>
-                <li className="leftpropeties" id={this.props.id} onClick={this.Clik}>{this.props.children}</li>
+                <li className="leftpropeties" id={this.props.id} onClick={this.Clik}>{this.props.text}</li>
             </div>
         ) ;
     }
