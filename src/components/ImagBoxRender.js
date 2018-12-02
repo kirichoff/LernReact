@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 class ImagBox extends Component {
     constructor(props){
         super(props);
-        this.state = {imagesCollection:''};
     }
     render(){
-        const { value, onIncrement, onDecrement } = this.props
 return(
     <div>
     <div className="col-md-3 col-sm-6 graphics ads">
@@ -47,20 +46,29 @@ class ImagBoxRender extends  Component {
                />
            )
             }
+
         render(){
-            const { value, onIncrement, onDecrement } = this.props
         return(
             <div>
-                <div onClick={onIncrement} >yesss {value}</div>
-                {this.state.images.map (this.eachImages)}
+              <div>
+                  {this.props.ls.todos.map(this.eachImages)}
+              </div>
             </div>
         );
         }
 
 }
+
 ImagBoxRender.propTypes = {
     value: PropTypes.number.isRequired,
     onIncrement: PropTypes.func.isRequired,
     onDecrement: PropTypes.func.isRequired
 }
-export default ImagBoxRender;
+
+function  MapStateToProps  (state){
+    return( {
+        ls: state
+    })
+}
+
+export default connect(MapStateToProps)(ImagBoxRender);

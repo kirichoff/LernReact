@@ -4,9 +4,11 @@ import './mountain.jpg'
 import MenuPoints from './MenuPoints'
 import Redact from './Redact'
 import InputType from './InputType'
-import PropTypes from 'prop-types'
-import MenuView from "./MenuView";
+import MenuView from "./MenuView"
 import  {connect} from 'react-redux'
+import RedactHeader from './RedactHeader'
+import RedactText from './RedactText'
+
 
 class AdminMenu extends Component {
     constructor(props){
@@ -20,7 +22,6 @@ class AdminMenu extends Component {
     render() {
         if (this.state.isread == null) {
             var style = {position:"absolute" , margin:200, width: 150, height: 150, backgroundColor: 'powderblue'};
-
             return (
                 <div>
                     <div style={style}>yesss </div>
@@ -32,7 +33,9 @@ class AdminMenu extends Component {
                             <li className="leftpropeties" id="cust">Customize</li>
                             <li className="leftpropeties">Plugins</li>
                             <li className="leftpropeties">Pages</li>
-                            <MenuPoints onClickOutside ={this.print} elem = "inta" updateData={this.updateData}> View Site</MenuPoints>
+                            <MenuPoints tag={<InputType  colort={'green'} id = {'a2'} idel = {"inta"}/>} updateData={this.updateData}> View Site</MenuPoints>
+                                <MenuPoints  tag={<InputType  colort={'green'} id = {'a2'} idel = {"inta"}/>} updateData={this.updateData}> View Site</MenuPoints>
+                            <RedactText idel={'inta'} />
                             </div>
                             )
                             :  (this.state.isrend)

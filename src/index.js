@@ -18,16 +18,18 @@ const store = createStore(rootReducer)
 
  ReactDOM.render(
     <Provider store = {store}>
-        <AdminMenu/>
+        <AdminMenu store = {store} />
     </Provider>,
     document.getElementById('test'))
 
 ReactDOM.render(
     <Provider store = {store}>
-        <ImagBoxRender/>
+        <ImagBoxRender store = {store} />
     </Provider>,
     document.getElementById('imr'));
-
+store.subscribe(()=>{
+    console.log('suscribe',store.getState());
+})
 
 
 serviceWorker.unregister();

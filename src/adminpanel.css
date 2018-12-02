@@ -42,6 +42,7 @@ body, html {
 			float:left;
 			width: 12%;
 			min-height: 100vh;
+			z-index: 10000;
 
 		}
 		#websiteName{

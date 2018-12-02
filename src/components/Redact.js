@@ -4,7 +4,7 @@ class Redact extends Component {
     render(){
         return(
             <div>
-                <InputType  id = {this.props.id} idel = {this.props.idel} />
+                {this.props.tag}
                 <div onClick={this.props.close}>close</div>
             </div>
         );
