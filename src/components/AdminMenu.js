@@ -11,7 +11,7 @@ import RedactText from './RedactText'
 import SizeChange from './SizeChange'
 import {addImg} from '../actions/index'
 import {deleteImg} from "../actions/index";
-
+import {changeTemp} from '../actions/index'
 
 class AdminMenu extends Component {
     constructor(props){
@@ -25,15 +25,14 @@ class AdminMenu extends Component {
         this.show = this.show.bind(this)
     }
     updateData = (value) => {
-        console.log(this.state)
         this.setState({ isrend: value });
     }
-    AddIM(){
+    AddIM = () =>{
         var obj = {img_src:'./img/icon.png', main_text: 'Mobile devices', button_text: 'Graphics / Ads'}
-        this.props.store.dispatch(addImg(obj.img_src,obj.main_text,obj.button_text))
+        this.props.dispatch(addImg(obj.img_src,obj.main_text,obj.button_text))
     }
-    delIm(){
-        this.props.store.dispatch(deleteImg(0));
+    delIm= () =>{
+        this.props.dispatch(deleteImg(0));
     }
     show = ()=>{
         if(this.state.st.display == 'block'){
@@ -46,6 +45,10 @@ class AdminMenu extends Component {
         }
     }
 
+        TempUp(styl,value,id){
+            this.props.dispatch(changeTemp(styl,value,id))
+        }
+
     render() {
         if (this.state.isread == null) {
             var style = {position:"absolute" , margin:200, width: 150, height: 150, backgroundColor: 'powderblue'};
@@ -56,7 +59,7 @@ class AdminMenu extends Component {
                     <MenuView style={this.state.st} >
                         { this.state.isrend == 1 ?(
                             <div id = "contentIN">
-                                <MenuPoints updateData={this.updateData} text = {'Some'} > <RedactHeader/> </MenuPoints>
+                                <MenuPoints updateData={this.updateData} text = {'Some'} > <RedactHeader TempUp={this.TempUp} /> </MenuPoints>
                                 <MenuPoints updateData={this.updateData} text = {'IMG'}>
                                     <div onClick={this.AddIM}>
                                         ADD

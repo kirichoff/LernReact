@@ -12,7 +12,7 @@ import {Provider} from 'react-redux'
 
 
 
-//const store = createStore(counter)
+//\const store = createStore(counter)
  ReactDOM.render(
     <Provider store = {store}>
         <AdminMenu store = {store} />
@@ -24,6 +24,7 @@ ReactDOM.render(
         <ImagBoxRender store = {store} />
     </Provider>,
     document.getElementById('imr'));
+
 store.subscribe(()=>{
     console.log('suscribe',store.getState());
 })

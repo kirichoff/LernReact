@@ -1,7 +1,5 @@
-
-
 var obj = {img_src:'./img/icon.png', main_text: 'Mobile devices', button_text: 'Graphics / Ads'}
-const todos = (state = [obj,obj], action) => {
+const todos = (state = [obj,obj,obj,obj,obj,obj,obj,obj], action) => {
     switch (action.type) {
         case 'ADD_IMG':
             return [
@@ -12,10 +10,10 @@ const todos = (state = [obj,obj], action) => {
                     button_text: action.button_text
                 }
             ]
-    case 'DELETE_IMAGE':
+        case 'DELETE_IMAGE':
         state.splice(action.i,1);
-        return state
-        default: return state
+        return [...state]
+        default: return [...state]
      }
 
 }
