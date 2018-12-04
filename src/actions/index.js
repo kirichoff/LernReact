@@ -9,8 +9,10 @@ export const deleteImg = (i) => ({
     type: 'DELETE_IMAGE',
     i: i
 })
-export  const changeTemp = (styl,text,id) =>({
+export  const changeTemp = (styl,text,id,i=0) =>({
+    type:'CHANGE',
     style: styl,
     value: text,
-    id: id
+    id: id,
+    i:i
 })

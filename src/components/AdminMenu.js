@@ -24,6 +24,7 @@ class AdminMenu extends Component {
         this.AddIM=  this.AddIM.bind(this);
         this.delIm=  this.delIm.bind(this);
         this.show = this.show.bind(this)
+        this.TempUp =this.TempUp.bind(this)
     }
     updateData = (value) => {
         this.setState({ isrend: value });
@@ -46,8 +47,9 @@ class AdminMenu extends Component {
         }
     }
 
-        TempUp(styl,value,id){
-            this.props.dispatch(changeTemp(styl,value,id))
+        TempUp = (styl,value,id) =>{
+                console.log("TempUp  "+styl,value,id)
+            this.props.dispatch(changeTemp(styl,value,id,3))
         }
 
     render() {
@@ -60,7 +62,7 @@ class AdminMenu extends Component {
                     <MenuView style={this.state.st} >
                         { this.state.isrend == 1 ?(
                             <div id = "contentIN">
-                                <MenuPoints updateData={this.updateData} text = {'Some'} > <RedactHeader TempUp={this.TempUp} /> </MenuPoints>
+                                <MenuPoints updateData={this.updateData} text = {'Some'} > <RedactHeader onsubmit={this.TempUp} /> </MenuPoints>
                                 <MenuPoints updateData={this.updateData} text = {'IMG'}>
                                     <div onClick={this.AddIM}>
                                         ADD
@@ -69,6 +71,7 @@ class AdminMenu extends Component {
                                         Del
                                     </div>
                                 </MenuPoints>
+                                <RedactText onsubmit={this.TempUp}  idel = {'inta'}></RedactText>
                             </div>
                             )
                             :  (this.state.isrend)

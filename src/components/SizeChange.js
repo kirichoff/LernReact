@@ -34,7 +34,7 @@ class InputType extends Component{
             <div>
                 <form>
                     <div>{this.props.children}</div>
-                    <input className={InputType} id={this.props.id} value={this.state.value} onChange={this.Replace} onKeyPress={this.valider} type="text"/>
+                    <input className={'InputType'} id={this.props.id} value={this.state.value} onChange={this.Replace} onKeyPress={this.valider} type="text"/>
                     <button onClick={this.Rep} ></button>
                 </form>
             </div>

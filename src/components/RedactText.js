@@ -9,7 +9,10 @@ import {changeTemp} from '../actions/index'
 class RedactText extends Component {
     constructor(props) {
         super(props);
-        this.state = {backgroundColor: '3133'}
+        this.state = {backgroundColor: '3133',
+            el:3
+        }
+        this.updat =this.updat.bind(this)
     }
 
     handleChangeComplete = (color) => {
@@ -22,8 +25,12 @@ class RedactText extends Component {
         this.setState({el: this.state.el})
     }
 
-    updat(style, value, id) {
-        this.setState({el: changeTemp(style, value, id)});
+    updat = (style, value, id)=> {
+        console.log(this.state.backgroundColor)
+        console.log(changeTemp(style, value, id))
+        console.log(this.state.el);
+
+        this.setState({el: changeTemp(style, value, id) });
         this.state.el = changeTemp(style, value, id);
         this.props.onsubmit(this.state.el.style, this.state.el.value, this.state.el.id);
     }

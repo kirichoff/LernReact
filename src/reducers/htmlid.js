@@ -6,8 +6,32 @@ var Templ =
     },
     value: 'txt',
     id: 'templ'
-}
-const htmlid = (state = [Templ], action) => {
+};
+var Templ2= [
+    { style: {
+            fontSize: '12',
+            color: 'black'
+        },
+        value: 'txt',
+        id: 'TX1'
+    },
+    { style: {
+            fontSize: '12',
+            color: 'black'
+        },
+        value: 'yesss',
+        id: 'TX2'
+    },
+    { style: {
+            fontSize: '12',
+            color: 'black'
+        },
+        value: 'просто',
+        id: 'TX3'
+    }
+    ]
+
+const htmlid = (state = [...Templ2], action) => {
     switch (action.type) {
         case 'CHANGE':
             state[action.i].style = action.style
@@ -18,3 +42,4 @@ const htmlid = (state = [Templ], action) => {
     }
 
 }
+export default htmlid

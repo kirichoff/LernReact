@@ -17,7 +17,7 @@ class InputType extends Component{
         var el = document.getElementById(this.props.idel);
         el.innerHTML = this.state.value;
 
-         let style = {color:this.props.colort,fontSize: this.props.txtSize}
+         let style = {color:this.props.colort/*,fontSize: this.props.txtSize*/}
         el.style.color = this.props.colort;
         el.style.fontSize = this.props.txtSize
 
@@ -29,7 +29,10 @@ class InputType extends Component{
             <div>
                 <form>
                     <div>{this.props.children}</div>
-                <input className={InputType} id={this.props.id} value={this.state.value} onChange={this.Replace} type="text"/>
+                <input className={'InputType'}
+                       id={this.props.id}
+                       value={this.state.value}
+                       onChange={this.Replace} type="text"/>
                     <button onClick={this.Rep} ></button>
                 </form>
             </div>

@@ -4,9 +4,10 @@ import RedactText from './RedactText'
 import {store} from '../Store'
  import {changeTemp} from "../actions";
 class RedactHeader extends Component {
-        Submite(style, value, id)
+        Submite = (style, value, id)=>
         {
-            this.props.dispatch(changeTemp(style, value, id));
+            console.log(style,value,id);
+            this.props.TempUp(style, value, id);
         }
     render() {
         return (

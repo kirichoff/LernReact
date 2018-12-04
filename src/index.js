@@ -9,20 +9,25 @@ import PropTypes from 'prop-types';
 
 import store from './Store'
 import {Provider} from 'react-redux'
+import CommponentsRend from "./components/CommponentsRend";
 
 
 
 //\const store = createStore(counter)
  ReactDOM.render(
-    <Provider store = {store}>
-        <AdminMenu store = {store} />
-    </Provider>,
+
+        <AdminMenu store = {store} />,
+
     document.getElementById('test'))
+ReactDOM.render(
+    <CommponentsRend store = {store}/>,
+    document.getElementById('re')
+);
 
 ReactDOM.render(
-    <Provider store = {store}>
-        <ImagBoxRender store = {store} />
-    </Provider>,
+
+        <ImagBoxRender store = {store} />,
+
     document.getElementById('imr'));
 
 store.subscribe(()=>{
