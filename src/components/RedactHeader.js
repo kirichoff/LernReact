@@ -2,16 +2,21 @@
 import InputType from './InputType'
 import RedactText from './RedactText'
 import {store} from '../Store'
+ import {changeTemp} from "../actions";
 class RedactHeader extends Component {
+        Submite(style, value, id)
+        {
+            this.props.dispatch(changeTemp(style, value, id));
+        }
     render() {
         return (
             <div>
                 {/* TX1-5*/}
                 <div>Rename Intro</div>
-                <RedactText  idel={'TX1'} />
-                <RedactText idel={'TX2'} />
-                <RedactText idel={'TX3'} />
-                <RedactText idel={'TX5'} />
+                <RedactText onsubmit={this.Submite} idel={'TX1'} />
+                <RedactText onsubmit={this.Submite} idel={'TX2'} />
+                <RedactText onsubmit={this.Submite} idel={'TX3'} />
+                <RedactText onsubmit={this.Submite} idel={'TX5'} />
                 <div>Rename second</div>
                 <InputType idel={'qwr3'} ></InputType>
                 <div>chacng Title</div>
@@ -20,10 +25,10 @@ class RedactHeader extends Component {
                 {/*...*/}
                 <div></div>
                 <div>change Fotter</div>
-                <RedactText idel={'footer'} />
+                <RedactText onsubmit={this.Submite} idel={'footer'} />
                 <div>change baground</div>
                 <div>Menu text</div>
-                <RedactText idel={'inta'} />
+                <RedactText onsubmit={this.Submite} idel={'inta'} />
             </div>
         );
     }
