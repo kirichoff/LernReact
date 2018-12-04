@@ -2,7 +2,7 @@ var obj = {img_src:'./img/icon.png', main_text: 'Mobile devices', button_text: '
 var Templ =
 { style: {
     fontSize: '12',
-        color: 'black',
+        color: 'black'
     },
     value: 'txt',
     id: 'templ'
@@ -13,8 +13,7 @@ const htmlid = (state = [Templ], action) => {
             state[action.i].style = action.style
             state[action.i].value= action.value
             state[action.i].id= action.id
-            return
-                [...state]
+            return [...state]
         default: return [...state]
     }
 

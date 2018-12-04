@@ -10,8 +10,9 @@ import RedactHeader from './RedactHeader'
 import RedactText from './RedactText'
 import SizeChange from './SizeChange'
 import {addImg} from '../actions/index'
-import {deleteImg} from "../actions/index";
+import {deleteImg} from "../actions/index"
 import {changeTemp} from '../actions/index'
+import {store} from '../Store'
 
 class AdminMenu extends Component {
     constructor(props){

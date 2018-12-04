@@ -15,8 +15,7 @@ class InputType extends Component{
     Rep(){
         var el = document.getElementById(this.props.idel);
         el.style.fontSize  = this.state.value+'px';
-        console.log(this.state.value)
-        console.log(el.style.fontSize )
+        this.props.ret(this.state.value);
     }
     valider (evt) {
 

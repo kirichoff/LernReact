@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+
+
 class InputType extends Component{
     constructor(props){
         super(props);
@@ -14,8 +16,12 @@ class InputType extends Component{
     Rep(){
         var el = document.getElementById(this.props.idel);
         el.innerHTML = this.state.value;
+
+         let style = {color:this.props.colort,fontSize: this.props.txtSize}
         el.style.color = this.props.colort;
         el.style.fontSize = this.props.txtSize
+
+        this.props.up(style,this.state.value,this.props.idel);
     }
 
     render(){
