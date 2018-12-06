@@ -59,7 +59,7 @@ class AdminMenu extends Component {
             return (
                 <div>
                     <div style={this.state.styl} onClick={this.show}>Admin</div>
-                    <MenuView style={this.state.st} >
+                    <MenuView className={'MenuView'} style={this.state.st} >
                         { this.state.isrend == 1 ?(
                             <div id = "contentIN">
                                 <MenuPoints updateData={this.updateData} text = {'Some'} > <RedactHeader onsubmit={this.TempUp} /> </MenuPoints>

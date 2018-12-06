@@ -3,18 +3,20 @@ import React, {Component} from 'react';
 class InputType extends Component{
     constructor(props){
         super(props);
-        this.state = {value: ''};
+        this.state = {value: '',el: 0};
         this.Replace = this.Replace.bind(this);
         this.Rep = this.Rep.bind(this);
         this.valider = this.valider.bind(this)
     }
     Replace(event){
         this.setState({value: event.target.value});
+        console.log('!!!!!!!!!!'+this.state.value)
     }
 
     Rep(){
         var el = document.getElementById(this.props.idel);
         el.style.fontSize  = this.state.value+'px';
+        console.log('!!!!!!!!!!'+this.state.value)
         this.props.ret(this.state.value);
     }
     valider (evt) {
@@ -35,8 +37,8 @@ class InputType extends Component{
                 <form>
                     <div>{this.props.children}</div>
                     <input className={'InputType'} id={this.props.id} value={this.state.value} onChange={this.Replace} onKeyPress={this.valider} type="text"/>
-                    <button onClick={this.Rep} ></button>
                 </form>
+                <button className={'subBtn'} onClick={this.Rep} >Подтвердить</button>
             </div>
         ) ;
     }

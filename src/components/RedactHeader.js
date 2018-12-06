@@ -14,16 +14,16 @@ class RedactHeader extends Component {
             <div>
                 {/* TX1-5*/}
                 <div>Rename Intro</div>
-                <RedactText onsubmit={this.Submite} idel={'TX1'} />
-                <RedactText onsubmit={this.Submite} idel={'TX2'} />
-                <RedactText onsubmit={this.Submite} idel={'TX3'} />
-                <RedactText onsubmit={this.Submite} idel={'TX5'} />
+                <RedactText isUpdate ={true} onsubmit={this.Submite} idel={'TX1'} />
+                <RedactText isUpdate ={true}  onsubmit={this.Submite} idel={'TX2'} />
+                <RedactText isUpdate ={true} onsubmit={this.Submite} idel={'TX3'} />
+                <RedactText isUpdate ={true} onsubmit={this.Submite} idel={'TX5'} />
                 <div>Rename second</div>
                 <InputType idel={'qwr3'} ></InputType>
                 <div>chacng Title</div>
                 <InputType idel={'title'} />
                 <div>change Icon</div>
-                {/*...*/}
+                {/*...code heare*/}
                 <div></div>
                 <div>change Fotter</div>
                 <RedactText onsubmit={this.Submite} idel={'footer'} />
