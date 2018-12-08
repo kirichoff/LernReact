@@ -4,8 +4,8 @@ class Redact extends Component {
     render(){
         return(
             <div>
+                <div className={'Close'} onClick={this.props.close}>close</div>
                 {this.props.tag}
-                <div onClick={this.props.close}>close</div>
             </div>
         );
     }

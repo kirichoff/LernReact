@@ -10,7 +10,12 @@ class InputType extends Component{
     }
     Replace(event){
         this.setState({value: event.target.value});
+        this.state.value = event.target.value
         console.log('!!!!!!!!!!'+this.state.value)
+        var el = document.getElementById(this.props.idel);
+        el.style.fontSize  = this.state.value+'px';
+        console.log('!!!!!!!!!!'+this.state.value)
+        this.props.ret(event.target.value);
     }
 
     Rep(){

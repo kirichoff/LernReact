@@ -16,7 +16,7 @@ return(
                      <span>{this.props.main_text}</span>
                      <em>{this.props.button_text}</em>
                 </div>
-            </div>
+            </div>bh
         </div>
     </a>
 </div>

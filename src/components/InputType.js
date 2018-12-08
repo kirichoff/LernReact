@@ -11,34 +11,40 @@ class InputType extends Component{
     }
     Replace(event){
         this.setState({value: event.target.value});
+        this.state.value =  event.target.value
+        var el = document.getElementById(this.props.idel);
+        el.innerHTML =event.target.value;
+        console.log(this.state.value)
+        // this.state.value;
+        let style = {color:this.props.colort/*,fontSize: this.props.txtSize*/}
+        el.style.color = this.props.colort;
+        el.style.fontSize = this.props.txtSize
+        this.props.up(style,this.state.value,this.props.idel);
     }
 
     Rep(){
         var el = document.getElementById(this.props.idel);
         el.innerHTML = this.state.value;
-
-         let style = {color:this.props.colort/*,fontSize: this.props.txtSize*/}
+        let style = {color:this.props.colort/*,fontSize: this.props.txtSize*/}
         el.style.color = this.props.colort;
         el.style.fontSize = this.props.txtSize
-
-
-
        this.props.up(style,this.state.value,this.props.idel);
     }
 
     render(){
         return(
             <div>
-                <form>
+
                     <div>{this.props.children}</div>
                 <input className={'InputType'}
-                       id={this.props.id}
                        value={this.state.value}
-                       onChange={this.Replace}
+                       id={this.props.id}
+                      onChange={this.Replace}
                        type="text"
+                      // onInput={this.Replace}
                 />
 
-                </form>
+
                 <button className={'subBtn'} onClick={this.Rep}>
                     Подтвердить
                 </button>
