@@ -1,10 +1,16 @@
 .InputType{
     display: block;
-    margin: 2em auto;
-    padding: 0.5em 0.25em;
+    margin:auto;
+    padding-right: 0%;
+    padding-left:0%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     border: none;
+    /*position: relative;*/
     border-radius: 10em;
-    font-size: 1.5em;
+    font-size: 1em;
+    height: 5vh;
+    width: 70%;
     text-align: center;
     box-shadow: 0 0 1em 0.25em rgba(0,0,0,0.2);
 }
@@ -12,7 +18,9 @@
 button
 {
     display: block;
-    margin: 2em auto;
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 5%;
     padding: 0.3em 0.15em;
     padding-left: 1em;
     padding-right: 1em;
@@ -25,4 +33,15 @@ button
 button:hover{
     box-shadow: 0 0 2em 0.45em rgba(0,0,0,0.2);
     color: black;
+}
+.RedactText
+{
+    font-size: 1em;
+    text-align: center;
+    position: center;
+    margin-left: 0;
+    box-shadow: 0 0 0.25em 0.15em rgba(0,0,0,0.2);
+    border-radius: 1em;
+    background-color: white;
+    padding-bottom: 5%;
 }

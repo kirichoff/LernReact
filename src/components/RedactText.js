@@ -35,7 +35,7 @@ class RedactText extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"RedactText"}>
                 <div>
                     <InputType colort={this.state.backgroundColor} up={this.updat}
                                idel={this.props.idel}>Helllow</InputType>
