@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import '../PanelStyle.css'
 
 
 class InputType extends Component{
@@ -21,7 +21,9 @@ class InputType extends Component{
         el.style.color = this.props.colort;
         el.style.fontSize = this.props.txtSize
 
-        this.props.up(style,this.state.value,this.props.idel);
+
+
+       this.props.up(style,this.state.value,this.props.idel);
     }
 
     render(){
@@ -32,9 +34,15 @@ class InputType extends Component{
                 <input className={'InputType'}
                        id={this.props.id}
                        value={this.state.value}
-                       onChange={this.Replace} type="text"/>
-                    <button onClick={this.Rep} ></button>
+                       onChange={this.Replace}
+                       type="text"
+                />
+
                 </form>
+                <button className={'subBtn'} onClick={this.Rep}>
+                    Подтвердить
+                </button>
+
             </div>
         ) ;
     }

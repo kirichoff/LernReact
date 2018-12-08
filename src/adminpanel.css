@@ -95,3 +95,6 @@ body, html {
 #contentIN{
 	margin-left: 10%;
 }
+.MenuView{
+	overflow: hidden;
+}

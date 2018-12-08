@@ -14,12 +14,9 @@ class CommponentsRend extends Component {
         )
     }
 
-
-
     render() {
 
         this.obj()
-
         return (
             <div>
             </div>

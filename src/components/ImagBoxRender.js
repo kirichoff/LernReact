@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 class ImagBox extends Component {
     constructor(props){
@@ -40,7 +39,7 @@ class ImagBoxRender extends  Component {
             ]};
     }
         eachImages(item,i){
-        console.log(this.props.ls)
+        //console.log(this.props.ls)
            return(
                <ImagBox
                    key = {i}
@@ -53,10 +52,12 @@ class ImagBoxRender extends  Component {
             }
 
         render(){
+        var i = 0;
         return(
             <div>
               <div>
-                  {this.props.ls.todos.map(ls => {  return <ImagBox
+                  {this.props.ls.todos.map(ls => { i++; return <ImagBox
+                           key ={i}
                           imgway={ls.img_src}
                           main_text={ls.main_text}
                           button_text={ls.button_text}
@@ -69,16 +70,10 @@ class ImagBoxRender extends  Component {
 
 }
 
-ImagBoxRender.propTypes = {
-    value: PropTypes.number.isRequired,
-    onIncrement: PropTypes.func.isRequired,
-    onDecrement: PropTypes.func.isRequired
-}
-
-function  MapStateToProps  (state){
+function  mapStateToProps  (state){
     return( {
         ls: state
     })
 }
 
-export default connect(MapStateToProps)(ImagBoxRender);
+export default connect(mapStateToProps) (ImagBoxRender);

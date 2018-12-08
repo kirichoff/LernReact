@@ -9,9 +9,8 @@ import {changeTemp} from '../actions/index'
 class RedactText extends Component {
     constructor(props) {
         super(props);
-        this.state = {backgroundColor: '3133',
-            el:3
-        }
+        this.state = {backgroundColor: '3133',el:0}
+        this.ret = this.ret.bind(this)
         this.updat =this.updat.bind(this)
     }
 
@@ -20,9 +19,8 @@ class RedactText extends Component {
         this.state.backgroundColor = color.hex
     }
 
-    ret(val) {
-        this.state.el.style.fontSize = val;
-        this.setState({el: this.state.el})
+    ret = (val)=> {
+        this.state.el.style.fontSize =val;
     }
 
     updat = (style, value, id)=> {
@@ -42,23 +40,17 @@ class RedactText extends Component {
                     <InputType colort={this.state.backgroundColor} up={this.updat}
                                idel={this.props.idel}>Helllow</InputType>
                     <div>color</div>
-                    {/*   {this.state.colors.map( item =>{
-                    var sil = {display: 'inline-block', width: 25, height: 25,borderRadius: 50,margin: 10};
-                    let buf=sil;
-                    buf.backgroundColor = item.backgroundColor;
-                    return <div onClick={this.chang} style={buf}></div>;}
-                )}*/}
                     <div>
-                        {/*<SketchPicker
-                    color={ this.state.background }
-                    onChangeComplete={ this.handleChangeComplete }
-                />*/}
-                        <ColorPiker onChangeComplete={this.handleChangeComplete}/>
+                        <ColorPiker  onChangeComplete={this.handleChangeComplete}/>
                     </div>
                     <div>text size</div>
 
                     <SizeChange ret={this.ret} idel={this.props.idel}/>
-                    <button onClick={this.updat}>Подтвердить</button>
+                    { this.props.isUpdate === true ?(<form>
+                        <button onClick={this.updat}>Подтвердить</button>
+                    </form>) : (
+                        <button onClick={this.updat}>Подтвердить</button>
+                    ) }
                 </div>
             </div>
         );
