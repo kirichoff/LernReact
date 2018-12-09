@@ -24,10 +24,8 @@ class RedactHeader extends Component {
                 <RedactText isUpdate ={true}  onsubmit={this.Submite} idel={'TX2'} />
                 <RedactText isUpdate ={true} onsubmit={this.Submite} idel={'TX3'} />
                 <RedactText isUpdate ={true} onsubmit={this.Submite} idel={'TX5'} />
-                <div>Rename second</div>
-                <InputType idel={'qwr3'} ></InputType>
                 <div>chacng Title</div>
-                <InputType idel={'title'} />
+                <InputType up={this.Submite} idel={'title'} />
                 <div>change Icon</div>
                 {/*...code heare*/}
                 <div></div>

@@ -27,6 +27,13 @@ var Templ2= [
         },
         value: 'просто',
         id: 'inta'
+    },
+    { style: {
+            fontSize: '12',
+            color: 'black'
+        },
+        value: 'просто',
+        id: 'TX5'
     }
     ]
 

@@ -26,7 +26,12 @@ class ColorPiker extends React.Component {
         this.setState({color2: color.rgb,color:color})
         this.state.color2 = color.rgb;
         this.state.color = color;
-        this.props.onChangeComplete(this.state.color);
+        var style={
+            color: color.hex
+        }
+
+        //this.props.onChangeComplete(this.state.color);
+        this.props.updat(style)
     };
 
     render() {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../PanelStyle.css'
 
 
-class InputType extends Component{
+class InputType2 extends Component{
     constructor(props){
         super(props);
         this.state = {value: ''};
@@ -32,24 +32,24 @@ class InputType extends Component{
         let style = {color:this.props.colort/*,fontSize: this.props.txtSize*/}
         el.style.color = this.props.colort;
         el.style.fontSize = this.props.txtSize
-       this.props.up(style,this.state.value,this.props.idel);
+        this.props.up(style,this.state.value,this.props.idel);
     }
 
     render(){
         return(
             <div>
 
-                    <div>{this.props.children}</div>
+                <div>{this.props.children}</div>
                 <input className={'InputType'}
                        value={this.state.value}
                        id={this.props.id}
-                      onChange={this.Replace}
+                       onChange={this.Replace}
                        type="text"
-                      // onInput={this.Replace}
+                    // onInput={this.Replace}
                 />
             </div>
         ) ;
     }
 }
 
-export default InputType;
+export default InputType2;

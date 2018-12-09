@@ -1,5 +1,5 @@
 var obj = {img_src:'./img/icon.png', main_text: 'Mobile devices', button_text: 'Graphics / Ads'}
-const todos = (state = [obj,obj,obj,obj,obj,obj,obj,obj], action) => {
+const todos = (state = [obj,obj,obj,obj,obj,obj,obj,obj,obj,obj,obj,obj,obj], action) => {
     switch (action.type) {
         case 'ADD_IMG':
             return [
